@@ -1,0 +1,41 @@
+{
+	"_version": "1.6.0",
+	"sap.app": {
+		"id": "",
+		"type": "application",
+		"applicationVersion": {
+			"version": ""
+		},
+		"title": ""
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "covid19.fiori.app.view.App",
+			"type": "XML",
+			"id": "myApp"
+		},
+		"dependencies": {
+			"minUI5Version": "01.56.10"
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "model/covid19_1.json",
+				"preload": false
+			}
+		}
+	}
+}

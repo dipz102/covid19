@@ -1,0 +1,52 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="covid19.fiori.app.controller.App"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App id="myApp">
+		<pages>
+			<Page showHeader="false">
+				<content>
+					<Table items="{path: '/covCase', sorter: {path: 'confirmed', descending: true } }">
+						<headerToolbar>
+							<Toolbar>
+								<Title width="40%" text="Global Stat"/>
+								<ToolbarSpacer/>
+								<SearchField width="60%" search=".onFilterInvoices"/>
+							</Toolbar>
+						</headerToolbar>
+						<!--<infoToolbar>-->
+						<!--	<Toolbar>-->
+						<!--		<Label text="Corona Virus Global Stat"/>-->
+						<!--	</Toolbar>-->
+						<!--</infoToolbar>-->
+						<columns>
+							<Column width="4em"></Column>
+							<Column hAlign="Begin">
+								<Text text="Location"/>
+							</Column>
+							<Column>
+								<Text text="Confirmed"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Recovered"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Death"/>
+							</Column>
+						</columns>
+						<ColumnListItem>
+							<cells>
+								<Image src="{icon}" height="2em" width="2em"/>
+								<Text text="{countryName}"/>
+								<!--<Text text="{path: 'confirmed', formatter: '.formatter.commaSept' }"/>-->
+								<!--<Text text="{recovered}"/>-->
+								<ObjectNumber number="{path: 'confirmed', formatter: '.formatter.commaSept' }" state="Warning"/>
+								<ObjectNumber number="{path: 'recovered', formatter: '.formatter.commaSept' }" state="Success"/>
+								<ObjectNumber number="{path: 'death', formatter: '.formatter.commaSept' }" state="Error"/>
+								<!--<Text text="{death}" state="Warning"/>-->
+							</cells>
+						</ColumnListItem>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
